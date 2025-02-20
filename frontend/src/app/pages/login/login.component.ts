@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Router } from '@angular/router';
 import axios from 'axios';
 
 @Component({
@@ -12,6 +13,10 @@ export class LoginComponent {
   email = '';
   password = '';
 
+  constructor(
+    private router: Router
+  ) {}
+
   async login() {
     try {
       const response = await axios.post('http://localhost:5000/api/auth/login', { 
@@ -20,6 +25,7 @@ export class LoginComponent {
       });
       localStorage.setItem('token', response.data.token);
       alert("Login successful!");
+      this.router.navigate(['/home']);
     } catch (error) {
       alert("Login failed!");
     }
