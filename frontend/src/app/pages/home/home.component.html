@@ -1,0 +1,5 @@
+<div *ngFor="let pet of pets">
+    <h2>{{ pet.name }}</h2>
+    <img [src]="pet.photos[0]?.medium" alt="Pet Image">
+  </div>
+  

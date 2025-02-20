@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "git-http": "^0.1.1"
+  }
+}
