@@ -1,0 +1,122 @@
+// Color variables
+$primary-color: #4caf50;
+$secondary-color: #2c3e50;
+$background-color: #ecf0f1;
+$white: #fff;
+$grey: #bdc3c7;
+$border-radius: 8px;
+$transition-speed: 0.3s;
+
+// Font import
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// body {
+//   font-family: 'Poppins', sans-serif;
+//   background: $background-color;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+// }
+
+main{
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+}
+
+// img{
+//   border-radius: 5%;
+//   background-size: cover;
+//   margin: 0;
+//   background-position: center;
+// }
+
+.signup-container {
+  background: $white;
+  padding: 2.5rem;
+  border-radius: $border-radius;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn $transition-speed ease-in-out;
+
+  h2 {
+    font-weight: 700;
+    color: $secondary-color;
+    margin-bottom: 1.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    input {
+      padding: 1rem;
+      font-size: 1rem;
+      border: 1px solid $grey;
+      border-radius: $border-radius;
+      background: #f5f5f5;
+      transition: border-color $transition-speed;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      background: $primary-color;
+      color: $white;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: background $transition-speed;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .login-link {
+    font-size: 0.9rem;
+    color: $secondary-color;
+    margin-top: 1rem;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
