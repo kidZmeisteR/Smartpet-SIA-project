@@ -1,0 +1,57 @@
+$primary-color: #4CAF50;
+$secondary-color: #333;
+$background-color: #f8f9fa;
+$border-radius: 10px;
+$transition-speed: 0.3s;
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: $background-color;
+
+  .login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+
+    h2 {
+      color: $secondary-color;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: $border-radius;
+      transition: border-color $transition-speed;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: $primary-color;
+      color: white;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: background-color $transition-speed;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+      }
+    }
+  }
+}
