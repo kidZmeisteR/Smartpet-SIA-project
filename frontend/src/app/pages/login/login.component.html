@@ -1,12 +1,27 @@
 <div class="login-container">
   <div class="login-box">
-    <h2>Login</h2>
-
+    <div class="logo">
+      <span class="logo-icon">✧</span>
+    </div>
+    <h2>Smart Pet</h2>
+    
     <form (submit)="login()">
-      <input type="email" [(ngModel)]="email" placeholder="Email" required>
-      <input type="password" [(ngModel)]="password" placeholder="Password" required>
-      <p>Sign up</p>
-      <button type="submit">Login</button>
+      <div class="input-group">
+        <input type="email" [(ngModel)]="email" placeholder="Email" name="email" required>
+      </div>
+      <div class="input-group">
+        <input type="password" [(ngModel)]="password" placeholder="Password" name="password" required>
+      </div>
+      <button type="submit" class="login-button">Sign in</button>
+      
+      <!-- <button type="button" class="google-button">
+        <img src="assets/google-icon.svg" alt="Google">
+        Sign in with Google
+      </button> -->
     </form>
+    
+    <p class="signup-text">
+      Don't have an account? <a routerLink="/signup">Sign up, it's free!</a>
+    </p>
   </div>
 </div>
