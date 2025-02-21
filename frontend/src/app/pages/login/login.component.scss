@@ -1,57 +1,166 @@
-$primary-color: #4CAF50;
-$secondary-color: #333;
-$background-color: #f8f9fa;
-$border-radius: 10px;
-$transition-speed: 0.3s;
+$background-color: #0a0a0a;
+// $background-color: white;
+$card-background: rgba(32, 32, 32, 0.8);
+$text-color: #ffffff;
+$input-background: rgba(255, 255, 255, 0.1);
+$primary-color: #8e8eff;
+$border-radius: 12px;
+$transition: all 0.3s ease;
+
+*{
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
 
 .login-container {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: $background-color;
+  justify-content: center;
+  background-color: $background-color;
+  // background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+  // padding: 20px;
+}
 
-  .login-box {
-    background: white;
-    padding: 2rem;
-    border-radius: $border-radius;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 350px;
+.login-box {
+  margin: 0;
+  width: 100%;
+  max-width: 400px;
+  background: $card-background;
+  backdrop-filter: blur(10px);
+  border-radius: $border-radius;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 
-    h2 {
-      color: $secondary-color;
-      margin-bottom: 1.5rem;
+  .logo {
+    margin-bottom: 1rem;
+    
+    .logo-icon {
+      font-size: 2rem;
+      color: $primary-color;
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
     }
+  }
+
+  h2 {
+    color: $text-color;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .input-group {
+    margin-bottom: 1rem;
 
     input {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 1rem;
-      border: 1px solid #ddd;
+      padding: 1rem;
+      background: $input-background;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: $border-radius;
-      transition: border-color $transition-speed;
+      color: $text-color;
+      font-size: 1rem;
+      transition: $transition;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
 
       &:focus {
-        border-color: $primary-color;
         outline: none;
-      }
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      background: $primary-color;
-      color: white;
-      border: none;
-      border-radius: $border-radius;
-      cursor: pointer;
-      transition: background-color $transition-speed;
-
-      &:hover {
-        background: darken($primary-color, 10%);
+        border-color: $primary-color;
+        background: rgba(255, 255, 255, 0.15);
       }
     }
   }
+
+  .login-button {
+    width: 100%;
+    padding: 1rem;
+    background: $primary-color;
+    color: $text-color;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition;
+    margin-bottom: 1rem;
+
+    &:hover {
+      background: lighten($primary-color, 5%);
+      transform: translateY(-1px);
+    }
+  }
+
+  .google-button {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: $text-color;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: $border-radius;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  .signup-text {
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// Add to your global styles or component styles
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

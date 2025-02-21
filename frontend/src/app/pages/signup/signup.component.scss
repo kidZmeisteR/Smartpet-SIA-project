@@ -1,19 +1,20 @@
-// Color variables
-$primary-color: #4caf50;
-$secondary-color: #2c3e50;
-$background-color: #ecf0f1;
-$white: #fff;
-$grey: #bdc3c7;
-$border-radius: 8px;
-$transition-speed: 0.3s;
+// Variables
+$background-color: #0a0a0a;
+$card-background: rgba(32, 32, 32, 0.8);
+$text-color: #ffffff;
+$input-background: rgba(255, 255, 255, 0.1);
+$primary-color: #8e8eff;
+$border-radius: 12px;
+$transition: all 0.3s ease;
 
 // Font import
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 * {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 // body {
@@ -25,12 +26,14 @@ $transition-speed: 0.3s;
 //   height: 100vh;
 // }
 
-main{
+main {
+  min-height: 100vh;
   display: flex;
-  width: 100%;
-  height: 90vh;
   align-items: center;
   justify-content: center;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
 }
 
 // img{
@@ -41,61 +44,73 @@ main{
 // }
 
 .signup-container {
-  background: $white;
-  padding: 2.5rem;
-  border-radius: $border-radius;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
+  background: $card-background;
+  backdrop-filter: blur(10px);
+  border-radius: $border-radius;
+  padding: 2.5rem;
   text-align: center;
-  animation: fadeIn $transition-speed ease-in-out;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
 
   h2 {
-    font-weight: 700;
-    color: $secondary-color;
-    margin-bottom: 1.5rem;
+    color: $text-color;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
   }
 
   form {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
 
     input {
+      width: 100%;
       padding: 1rem;
-      font-size: 1rem;
-      border: 1px solid $grey;
+      background: $input-background;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: $border-radius;
-      background: #f5f5f5;
-      transition: border-color $transition-speed;
+      color: $text-color;
+      font-size: 1rem;
+      transition: $transition;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
 
       &:focus {
-        border-color: $primary-color;
         outline: none;
+        border-color: $primary-color;
+        background: rgba(255, 255, 255, 0.15);
       }
     }
 
     button {
+      width: 100%;
       padding: 1rem;
-      font-size: 1rem;
-      font-weight: 500;
       background: $primary-color;
-      color: $white;
+      color: $text-color;
       border: none;
       border-radius: $border-radius;
+      font-size: 1rem;
+      font-weight: 500;
       cursor: pointer;
-      transition: background $transition-speed;
+      transition: $transition;
+      margin-top: 0.5rem;
 
       &:hover {
-        background: darken($primary-color, 10%);
+        background: lighten($primary-color, 5%);
+        transform: translateY(-1px);
       }
     }
   }
 
   .login-link {
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
-    color: $secondary-color;
-    margin-top: 1rem;
 
     a {
       color: $primary-color;

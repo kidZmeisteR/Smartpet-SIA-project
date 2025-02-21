@@ -5,6 +5,7 @@ import axios from 'axios';
 
 @Component({
   selector: 'app-signup',
+  standalone: true,
   imports: [FormsModule, RouterModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
